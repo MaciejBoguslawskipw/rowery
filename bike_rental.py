@@ -126,3 +126,40 @@ def send_rental_invoice_email(customer_email, rental_details):
         print(f"Błąd podczas wysyłania e-maila: {e}")
 
 
+# Przykład użycia
+if __name__ == "__main__":
+    print("System wynajmu rowerów")
+    while True:
+        print("\n1. Wynajmij rower")
+        print("2. Wyświetl aktywne wynajmy")
+        print("3. Anuluj wynajem")
+        print("4. Generuj raport dzienny")
+        print("5. Wyjdź")
+
+        choice = input("Wybierz opcję: ")
+
+        if choice == "1":
+            name = input("Podaj imię klienta: ")
+            try:
+                duration = int(input("Podaj czas wynajmu (w godzinach): "))
+                rent_bike(name, duration)
+            except ValueError:
+                print("Czas wynajmu musi być liczbą całkowitą.")
+        elif choice == "2":
+            rentals = load_rentals()
+            if rentals:
+                print("Aktywne wynajmy:")
+                for r in rentals:
+                    print(r)
+            else:
+                print("Brak aktywnych wynajmów.")
+        elif choice == "3":
+            name = input("Podaj imię klienta do anulowania wynajmu: ")
+            cancel_rental(name)
+        elif choice == "4":
+            generate_daily_report()
+        elif choice == "5":
+            print("Dziękujemy za skorzystanie z systemu. Do widzenia!")
+            break
+        else:
+            print("Nieprawidłowa opcja. Spróbuj ponownie.")
