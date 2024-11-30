@@ -13,7 +13,7 @@ Zaawansowane funkcje obejmują integrację z Google Calendar.
 1. **Klonowanie repozytorium**
    Skopiuj projekt na swój komputer:
    ```bash
-   git clone https://github.com/username/bike_rental.git
+   git clone https://github.com/MaciejBoguslawskipw/rowery.git
    cd bike_rental
    ```
 
