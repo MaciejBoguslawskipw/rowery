@@ -32,3 +32,13 @@ def save_rental(rental, file_path=RENTALS_FILE):
         json.dump(rentals, file, indent=4)
 
 
+# Funkcja wczytująca istniejące wynajmy
+def load_rentals(file_path=RENTALS_FILE):
+    """Wczytuje wynajmy z pliku JSON."""
+    if not os.path.exists(file_path):
+        print("Brak aktywnych wynajmów.")
+        return []
+    with open(file_path, "r") as file:
+        return json.load(file)
+
+
