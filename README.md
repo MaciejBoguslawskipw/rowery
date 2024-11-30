@@ -114,5 +114,4 @@ Projekt stworzony przez Maciej Bogusławski .
 
 ---
 
-## Licencja
-Projekt udostępniany na licencji MIT. Szczegóły znajdują się w pliku `LICENSE`.
+
